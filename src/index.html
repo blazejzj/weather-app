@@ -3,10 +3,118 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style.css" type="text/css">
         <title>Weather-App-blazejzj</title>
     </head>
     <body>
-        
+        <div id="inputContainer">
+            <input type="text" id="inputField" placeholder="Enter city name" required>
+            <button id="searchButton">searchICON</button>
+        </div>
+        <div id="infoContainer">
+            <div id="mainInformationContainer">
+                <div id="mainInfoDisplayContainer">
+                    <div id="celsiusOrFahrenheit">
+                        <button class="chooseTempConversionBtns" id="chooseCelsiusBtn">C°</button>
+                        <button class="chooseTempConversionBtns" id="chooseFahrenheitBtn">F°</button>
+                    </div>
+                    <h1 id="mainInfoWeatherType">Clear weather</h1>
+                    <span id="mainInfoWeatherDate">Monday, 20. July</span>
+                    <span id="mainInfoWeatherDegrees">18 C°</span>
+                    <img id="mainInfoCloudIcon" src="/asset/icons/clear-day.svg" alt="Cloud icon">
+                </div>
+            </div>
+            <div id="secondInformationContainer">
+                <div id="secondInfoDisplayContainer">
+                    <div>
+                        <img src="/asset/icons/rainChance.svg" alt="icon" class="secondInfoIcons">
+                        <div class="secondInfo">
+                            <span>Chance of rain</span>
+                            <span  id="chanceOfRain">100%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/asset/icons/humidity.svg" alt="icon" class="secondInfoIcons">
+                        <div class="secondInfo"> 
+                            <span>Humidity</span>
+                            <span id="Humidity">65%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/asset/icons/tempFeel.svg" alt="icon" class="secondInfoIcons">
+                        <div class="secondInfo">
+                            <span>Feels like</span>
+                            <span id="feelsLikeTemp">21°</span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="/asset/icons/windSpeed.svg" alt="icon" class="secondInfoIcons">
+                        <div class="secondInfo">
+                            <span>windSpeed</span>
+                            <span id="windSpeed">7 km/h</span>
+                        </div>
+                    </div>
+                </div>
+                <div id="hourCarouselleContainer">
+                    <button class="carouselle-btn prev">&#8592;</button>
+                    <div class="hourSlidesWrapper">
+                        <div class="hourSlide">
+                            <span>00:00</span>
+                            <span>Degrees</span>
+                            <img src="#" alt="Cloud icon" class="hourCarouselleIcons">
+                        </div>
+                        <div class="hourSlide"><span>01:00</span><span>Degrees</span><img src="#" alt="Cloud icon" class="hourCarouselleIcons"></div>
+                        <div class="hourSlide"><span>02:00</span><span>Degrees</span><img src="#" alt="Cloud icon" class="hourCarouselleIcons"></div>
+                        <div class="hourSlide"><span>03:00</span><span>Degrees</span><img src="#" alt="Cloud icon" class="hourCarouselleIcons"></div>
+                    </div>
+                    <button class="carouselle-btn next">&#8594;</button>
+                </div>
+                
+            </div>
+        </div>
+        <div id="dayCarouselleContainer">
+            <button class="carouselle-btn prev">&#8592;</button>
+            <button class="carouselle-btn next">&#8594;</button>
+            <div class="daySlide">
+                <span>Monday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+            <div class="daySlide">
+                <span>Tuesday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+            <div class="daySlide">
+                <span>Wednesday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+            <div class="daySlide">
+                <span>Thursday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+            <div class="daySlide">
+                <span>Friday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+            <div class="daySlide">
+                <span>Saturday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+            <div class="daySlide">
+                <span>Sunday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+            <div class="daySlide">
+                <span>Monday</span>
+                <span>Degrees</span>
+                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
+            </div>
+        </div>
     </body>
 </html>
