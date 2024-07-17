@@ -7,113 +7,96 @@
         <title>Weather-App-blazejzj</title>
     </head>
     <body>
-        <div id="inputContainer">
-            <input type="text" id="inputField" placeholder="Enter city name" required>
-            <button id="searchButton">searchICON</button>
-        </div>
-        <div id="infoContainer">
-            <div id="mainInformationContainer">
-                <div id="mainInfoDisplayContainer">
-                    <div id="celsiusOrFahrenheit">
-                        <button class="chooseTempConversionBtns" id="chooseCelsiusBtn">C°</button>
-                        <button class="chooseTempConversionBtns" id="chooseFahrenheitBtn">F°</button>
-                    </div>
-                    <h1 id="mainInfoWeatherType">Clear weather</h1>
-                    <span id="mainInfoWeatherDate">Monday, 20. July</span>
-                    <span id="mainInfoWeatherDegrees">18 C°</span>
-                    <img id="mainInfoCloudIcon" src="/asset/icons/clear-day.svg" alt="Cloud icon">
+        <div id="backgroundWrapper">
+            <div id="mainWrapper">
+                <div id="inputContainer">
+                    <input type="text" id="inputField" placeholder="Place name..." required>
+                    <button id="searchButton"><img src="/asset/icons/searchIcon.svg" id="searchIconImg" alt="search button icon"></button>
                 </div>
-            </div>
-            <div id="secondInformationContainer">
-                <div id="secondInfoDisplayContainer">
-                    <div>
-                        <img src="/asset/icons/rainChance.svg" alt="icon" class="secondInfoIcons">
-                        <div class="secondInfo">
-                            <span>Chance of rain</span>
-                            <span  id="chanceOfRain">100%</span>
+                <div id="infoContainer">
+                    <div id="mainInformationContainer">
+                        <div id="mainInfoDisplayContainer">
+                            <div id="celsiusOrFahrenheit">
+                                <button class="chooseTempConversionBtns" id="chooseCelsiusBtn">C°</button>
+                                <button class="chooseTempConversionBtns" id="chooseFahrenheitBtn">F°</button>
+                            </div>
+                            <h1 id="mainInfoWeatherType">Clear weather</h1>
+                            <span id="mainInfoWeatherDate">Monday, 20. July</span>
+                            <span id="mainInfoWeatherDegrees">18 C°</span>
+                            <img id="mainInfoCloudIcon" src="/asset/icons/clear-day.svg" alt="Cloud icon">
                         </div>
                     </div>
-                    <div>
-                        <img src="/asset/icons/humidity.svg" alt="icon" class="secondInfoIcons">
-                        <div class="secondInfo"> 
-                            <span>Humidity</span>
-                            <span id="Humidity">65%</span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="/asset/icons/tempFeel.svg" alt="icon" class="secondInfoIcons">
-                        <div class="secondInfo">
-                            <span>Feels like</span>
-                            <span id="feelsLikeTemp">21°</span>
-                        </div>
-                    </div>
-                    <div>
-                        <img src="/asset/icons/windSpeed.svg" alt="icon" class="secondInfoIcons">
-                        <div class="secondInfo">
-                            <span>windSpeed</span>
-                            <span id="windSpeed">7 km/h</span>
+                    <div id="secondInformationContainer">
+                        <div id="secondInfoDisplayContainer">
+                            <div>
+                                <img src="/asset/icons/rainChance.svg" alt="icon" class="secondInfoIcons">
+                                <div class="secondInfo">
+                                    <span>Chance of rain</span>
+                                    <span  id="chanceOfRain">100%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/asset/icons/humidity.svg" alt="icon" class="secondInfoIcons">
+                                <div class="secondInfo"> 
+                                    <span>Humidity</span>
+                                    <span id="Humidity">65%</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/asset/icons/tempFeel.svg" alt="icon" class="secondInfoIcons">
+                                <div class="secondInfo">
+                                    <span>Feels like</span>
+                                    <span id="feelsLikeTemp">21°</span>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="/asset/icons/windSpeed.svg" alt="icon" class="secondInfoIcons">
+                                <div class="secondInfo">
+                                    <span>windSpeed</span>
+                                    <span id="windSpeed">7 km/h</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div id="hourCarouselleContainer">
-                    <button class="carouselle-btn prev">&#8592;</button>
-                    <div class="hourSlidesWrapper">
-                        <div class="hourSlide">
-                            <span>00:00</span>
-                            <span>Degrees</span>
-                            <img src="#" alt="Cloud icon" class="hourCarouselleIcons">
+                <div id="carouselles">
+                    <div class="carouselleContainer">
+                        <button class="carouselle-btn prev">&#8592;</button>
+                        <div class="slidesWrapper"> 
+                            <div class="slide">
+                                <div>
+                                    <span>Monday</span>
+                                    <span>32 C°</span>
+                                </div>
+                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                            </div>
+                            <div class="slide">
+                                <div>
+                                    <span>Tuesday</span>
+                                    <span>32 C°</span>
+                                </div>
+                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                            </div>
+                            <div class="slide">
+                                <div>
+                                    <span>Wednesday</span>
+                                    <span>32 C°</span>
+                                </div>
+                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                            </div>
                         </div>
-                        <div class="hourSlide"><span>01:00</span><span>Degrees</span><img src="#" alt="Cloud icon" class="hourCarouselleIcons"></div>
-                        <div class="hourSlide"><span>02:00</span><span>Degrees</span><img src="#" alt="Cloud icon" class="hourCarouselleIcons"></div>
-                        <div class="hourSlide"><span>03:00</span><span>Degrees</span><img src="#" alt="Cloud icon" class="hourCarouselleIcons"></div>
+                        <button class="carouselle-btn next">&#8594;</button>
                     </div>
-                    <button class="carouselle-btn next">&#8594;</button>
+                    <div class="carouselleContainer">
+                        <button class="carouselle-btn prev">&#8592;</button>
+                        <div class="slidesWrapper">
+                            <div class="slide"><div><span>00:00</span><span>18 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
+                            <div class="slide"><div><span>01:00</span><span>21 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
+                            <div class="slide"><div><span>02:00</span><span>11 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
+                        </div>
+                        <button class="carouselle-btn next">&#8594;</button>
+                    </div>
                 </div>
-                
-            </div>
-        </div>
-        <div id="dayCarouselleContainer">
-            <button class="carouselle-btn prev">&#8592;</button>
-            <button class="carouselle-btn next">&#8594;</button>
-            <div class="daySlide">
-                <span>Monday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
-            </div>
-            <div class="daySlide">
-                <span>Tuesday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
-            </div>
-            <div class="daySlide">
-                <span>Wednesday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
-            </div>
-            <div class="daySlide">
-                <span>Thursday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
-            </div>
-            <div class="daySlide">
-                <span>Friday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
-            </div>
-            <div class="daySlide">
-                <span>Saturday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
-            </div>
-            <div class="daySlide">
-                <span>Sunday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
-            </div>
-            <div class="daySlide">
-                <span>Monday</span>
-                <span>Degrees</span>
-                <img src="#" alt="Cloud icon" class="dayCarouselleIcons">
             </div>
         </div>
     </body>

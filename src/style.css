@@ -30,14 +30,39 @@ body {
     gap: 3rem;
 }
 
+#backgroundWrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#mainWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    max-width: 1500px;
+    width: 100%;
+
+}
+
 #infoContainer {
     width: 100%;
-    display: flex;
+    gap: 6rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
 }
 
 #mainInformationContainer {
     height: 30rem;
+    display: flex;
+    justify-content: center;
 
     #mainInfoDisplayContainer {
         display: flex;
@@ -86,41 +111,112 @@ body {
             }
         }
     }
+}
 
-    #hourCarouselleContainer {
+#carouselles {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+
+    .carouselleContainer {
         width: 100%;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 1rem;
-
-        .hourSlidesWrapper {
+    
+        .slidesWrapper {
             display: flex;
             flex-direction: row;
-            gap: 0.5rem;
-
-            .hourSlide {
+            gap: 1rem;
+    
+            .slide {
                 display: flex;
-                flex-direction: column;
-
-                span:nth-child(1) {
-                    font-size: 0.8rem;
+                flex-direction: row-reverse;
+                border: 1px solid white;
+                border-radius: 10px;
+                padding: 1rem 0.5rem;
+                gap: 0.5rem;
+                justify-content: center;
+                align-items: center;
+    
+                div {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.5rem;
+                }
+    
+                div span:nth-child(1) { /* Hour */
+                    font-size: 1rem;
                     font-weight: 500;
                 }
-
-                span:nth-child(2) {
-                    font-size: 1.2rem;
+    
+                div span:nth-child(2) { /* Degrees */
+                    font-size: 1.5rem;
                     font-weight: 700;
+                }
+                
+    
+                .carouselleIcons {
+                    filter: brightness(0) saturate(100%) invert(100%) sepia(7%) saturate(7485%) hue-rotate(290deg) brightness(107%) contrast(108%);
+                    width: 50px;
+                    height: 50px;
                 }
             }
         }
     }
 }
 
+
 .secondInfoIcons {
     width: 45px;
     height: 45px;
     filter: brightness(0) saturate(100%) invert(100%) sepia(7%) saturate(7485%) hue-rotate(290deg) brightness(107%) contrast(108%);
 }
+
+
+
+#inputContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid white;
+
+    input {
+        background: none;
+        border: none;
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        width: 10rem;
+        color: white;
+        font-weight: bold;
+    }
+
+    input::placeholder {
+        color: white;
+    }
+
+    input:focus {
+        outline: none;
+    }
+
+    #searchButton {
+        background: none;
+        outline: none;
+        border: none;
+    
+        #searchIconImg {
+            width: 21px;
+            height: 21px;
+            filter: brightness(0) saturate(100%) invert(100%) sepia(7%) saturate(7485%) hue-rotate(290deg) brightness(107%) contrast(108%);
+        }
+    }
+}
+
+
 
 #mainInfoCloudIcon {
     width: 150px;
