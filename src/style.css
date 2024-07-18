@@ -6,6 +6,13 @@
     box-sizing: border-box;
 }
 
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    filter: brightness(0) saturate(100%) invert(66%) sepia(0%) saturate(45%) hue-rotate(231deg) brightness(90%) contrast(88%);
+}
 
 html {
     font-family: "Montserrat", sans-serif;
@@ -125,6 +132,22 @@ body {
         align-items: center;
         justify-content: center;
         gap: 1rem;
+
+        button {
+            background: none;
+            outline: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+
+            .carouselleBtnIcons {
+                height: 40px;
+                width: 40px;
+                filter: brightness(0) saturate(100%) invert(100%) sepia(7%) saturate(7485%) hue-rotate(290deg) brightness(107%) contrast(108%);
+                border-radius: 50%;
+            }
+        }
     
         .slidesWrapper {
             display: flex;
@@ -167,6 +190,7 @@ body {
         }
     }
 }
+
 
 
 .secondInfoIcons {
@@ -233,14 +257,8 @@ body {
     border-radius: 50%;
     outline: none;
     border: none;
-    cursor: pointer;
     color: white;
 }
-
-.chooseTempConversionBtns:hover {
-    background: rgba(255, 255, 255, 0.1);
-}
-
 
 .secondInfo {
     display: flex;
