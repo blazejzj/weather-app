@@ -10,7 +10,7 @@
             <div id="mainWrapper">
                 <div id="inputContainer">
                     <input type="text" id="inputField" placeholder="Place name..." required>
-                    <button id="searchButton"><img src="/asset/icons/searchIcon.svg" id="searchIconImg" alt="search button icon"></button>
+                    <button id="inputFieldSearchBtn"><img src="/asset/icons/searchIcon.svg" id="searchIconImg" alt="search button icon"></button>
                 </div>
                 <div id="infoContainer">
                     <div id="mainInformationContainer">
@@ -31,7 +31,7 @@
                                 <img src="/asset/icons/rainChance.svg" alt="icon" class="secondInfoIcons">
                                 <div class="secondInfo">
                                     <span>Chance of rain</span>
-                                    <span  id="chanceOfRain">100%</span>
+                                    <span id="chanceOfRain">100%</span>
                                 </div>
                             </div>
                             <div>
@@ -61,7 +61,7 @@
                 <div id="carouselles">
                     <div class="carouselleContainer">
                         <button class="carouselle-btn prev"><img src="/asset/icons/arrowLeft.svg" alt="previous" class="carouselleBtnIcons"></button>
-                        <div class="slidesWrapper"> 
+                        <div class="slidesWrapper" id="slidesWrapperDays"> 
                             <div class="slide">
                                 <div>
                                     <span>Monday</span>
@@ -88,8 +88,14 @@
                     </div>
                     <div class="carouselleContainer">
                         <button class="carouselle-btn prev"><img src="/asset/icons/arrowLeft.svg" alt="previous" class="carouselleBtnIcons"></button>
-                        <div class="slidesWrapper">
-                            <div class="slide"><div><span>00:00</span><span>18 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
+                        <div class="slidesWrapper" id="slidesWrapperHour">
+                            <div class="slide">
+                                <div>
+                                    <span>00:00</span>
+                                    <span>18 C°</span>
+                                </div>
+                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                            </div>
                             <div class="slide"><div><span>01:00</span><span>21 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
                             <div class="slide"><div><span>02:00</span><span>11 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
                         </div>
