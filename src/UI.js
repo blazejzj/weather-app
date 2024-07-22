@@ -37,6 +37,7 @@ class UI {
         const weatherType = document.getElementById("mainInfoWeatherType");
         const weatherDate = document.getElementById("mainInfoWeatherDate");
         const weatherDegrees = document.getElementById("mainInfoWeatherDegrees");
+        const weatherCityName = document.getElementById("mainInfoWeatherCityName");
         const icon = document.getElementById("mainInfoCloudIcon");
         const chanceOfRain = document.getElementById("chanceOfRain");
         const humidity = document.getElementById("Humidity");
@@ -45,11 +46,12 @@ class UI {
 
         weatherType.textContent = information.conditions;
         weatherDate.textContent = information.datetime;
-        weatherDegrees.textContent = information.temp;
+        weatherDegrees.textContent = information.temp + " °C";
+        weatherCityName.textContent = information.address;
         icon.src = icons[information.icon];
-        chanceOfRain.textContent = information.precip + "%";
+        chanceOfRain.textContent = information.precip + " %";
         humidity.textContent = information.humidity + "%";
-        feelsLikeTemp.textContent = information.feelslike;
+        feelsLikeTemp.textContent = information.feelslike + " °C";
         windSpeed.textContent = information.windspeed + " m/s";
 
         UI.showAllHourSlides(information);

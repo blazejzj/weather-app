@@ -1,5 +1,5 @@
 import { apiHandler } from "./apiHandler";
-import { format } from "date-fns";
+import { format, parse } from "date-fns";
 import { UI } from "./UI";
 import icons from "./icons";
 
@@ -12,14 +12,20 @@ class DOMS {
         this.days = this.data.days;
     }
 
-    static getCityName() {
+    static async getCityName() {
         const cityInput = document.getElementById('inputField');
         const submitInputBtn = document.getElementById('inputFieldSearchBtn'); 
+        
+        const initialCityName = "oslo";
+        await this.fetchData(initialCityName);;
+        UI.showAllDaySlides();
+        UI.displayInfoAboutSelectedDay();
         
         submitInputBtn.addEventListener('click', async () => {
             const cityName = cityInput.value;
             await this.fetchData(cityName);
             UI.showAllDaySlides(); 
+            UI.displayInfoAboutSelectedDay();
         });
     }
 
@@ -66,7 +72,8 @@ class DOMS {
 
             const infoWrapper = document.createElement('div');
             const spanHour = document.createElement('span');
-            spanHour.textContent = format(new Date(hours[i].datetime), 'HH:mm');
+            const parsedTime = parse(hours[i].datetime, 'HH:mm:ss', new Date());
+            spanHour.textContent = format(parsedTime, 'HH:mm');
             spanHour.setAttribute("id", "hourName");
 
             const spanDegrees = document.createElement('span');
