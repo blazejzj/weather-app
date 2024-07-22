@@ -47,7 +47,7 @@ class DOMS {
             spanDay.setAttribute("id", "dayName");
 
             const spanDegrees = document.createElement('span');
-            spanDegrees.textContent = this.days[i].temp;
+            spanDegrees.textContent = this.days[i].temp + " °C";
             spanDegrees.setAttribute("id", "dayDegrees");
 
             const img = document.createElement('img');
@@ -77,7 +77,7 @@ class DOMS {
             spanHour.setAttribute("id", "hourName");
 
             const spanDegrees = document.createElement('span');
-            spanDegrees.textContent = hours[i].temp;
+            spanDegrees.textContent = hours[i].temp + " °C";
             spanDegrees.setAttribute("id", "hourDegrees");
 
             const img = document.createElement('img');
