@@ -29,7 +29,7 @@ class DOMS {
         });
     }
 
-    static createDayCards() {
+    static createDayCards(celsius) {
         const temporaryWrapper = document.createDocumentFragment();
 
         for (let i = 0; i < 7; i++) {
@@ -47,7 +47,12 @@ class DOMS {
             spanDay.setAttribute("id", "dayName");
 
             const spanDegrees = document.createElement('span');
-            spanDegrees.textContent = this.days[i].temp + " °C";
+            if (!celsius) {
+                spanDegrees.textContent = this.days[i].temp + " °F";
+            }
+            else {
+                spanDegrees.textContent = UI.fahrenheitToCelsius(this.days[i].temp) + " °C";
+            }
             spanDegrees.setAttribute("id", "dayDegrees");
 
             const img = document.createElement('img');
@@ -62,7 +67,7 @@ class DOMS {
         return temporaryWrapper;
     }
 
-    static createHourCards(day) {
+    static createHourCards(day, celsius) {
         const hours = day.hours;
         const temporaryWrapper = document.createDocumentFragment();
 
@@ -77,7 +82,13 @@ class DOMS {
             spanHour.setAttribute("id", "hourName");
 
             const spanDegrees = document.createElement('span');
-            spanDegrees.textContent = hours[i].temp + " °C";
+            if (!celsius) {
+                spanDegrees.textContent = hours[i].temp + " °F";
+            }
+            else {
+                spanDegrees.textContent = UI.fahrenheitToCelsius(hours[i].temp) + " °C";
+            }
+
             spanDegrees.setAttribute("id", "hourDegrees");
 
             const img = document.createElement('img');

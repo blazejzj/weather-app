@@ -13,12 +13,18 @@ class UI {
     }
 
     static cacheDOM() {
+        // Carouselles
         this.dayNextBtn = document.getElementById("dayNextBtn");
         this.dayPrevBtn = document.getElementById("dayPrevBtn");
         this.hourNextBtn = document.getElementById("hourNextBtn");
         this.hourPrevBtn = document.getElementById("hourPrevBtn");
         this.dayIndex = 0;
         this.hourIndex = 0;
+        this.celsius = true;
+
+        // Temperature switch
+        this.celsiusBtn = document.getElementById("chooseCelsiusBtn");
+        this.fahrenheitBtn = document.getElementById("chooseFahrenheitBtn");
     }
 
     static bindEvents() {
@@ -48,6 +54,20 @@ class UI {
                 UI.updateHourSlides();
             }
         });
+        this.celsiusBtn.addEventListener("click", function() {
+            UI.celsius = true;
+            UI.showAllDaySlides();
+            UI.displayInfoAboutSelectedDay();
+        });
+        this.fahrenheitBtn.addEventListener("click", function() {
+            UI.celsius = false;
+            UI.showAllDaySlides();
+            UI.displayInfoAboutSelectedDay();
+        });
+    }
+
+    static returnCelsius() {
+        return this.celsius;
     }
 
     static clearDaySlides() {
@@ -72,14 +92,14 @@ class UI {
     static showAllDaySlides() {
         UI.clearDaySlides();
         const slidesWrapper = document.getElementById("slidesWrapperDays");
-        slidesWrapper.appendChild(DOMS.createDayCards());
+        slidesWrapper.appendChild(DOMS.createDayCards(this.celsius));
         UI.updateDaySlides();
     }
 
     static showAllHourSlides(day) {
         UI.clearHourSlides();
         const slidesWrapper = document.getElementById("slidesWrapperHour");
-        slidesWrapper.appendChild(DOMS.createHourCards(day));
+        slidesWrapper.appendChild(DOMS.createHourCards(day, this.celsius));
         UI.updateHourSlides();
     }
 
@@ -106,16 +126,28 @@ class UI {
 
         weatherType.textContent = information.conditions;
         weatherDate.textContent = information.datetime;
-        weatherDegrees.textContent = information.temp + " °C";
+
+        if (this.celsius) {
+            weatherDegrees.textContent = this.fahrenheitToCelsius(information.temp) + " °C";
+            feelsLikeTemp.textContent = this.fahrenheitToCelsius(information.feelslike) + " °C";
+        }
+        else {
+            weatherDegrees.textContent = information.temp + " °F";
+            feelsLikeTemp.textContent = information.feelslike + " °F";
+        }
         weatherCityName.textContent = data.address;
         icon.src = icons[information.icon];
         chanceOfRain.textContent = information.precip + " %";
         humidity.textContent = information.humidity + "%";
-        feelsLikeTemp.textContent = information.feelslike + " °C";
         windSpeed.textContent = information.windspeed + " m/s";
 
         UI.showAllHourSlides(information);
     }
+
+    static fahrenheitToCelsius(fahrenheit) {
+        return Math.round((fahrenheit - 32) * (5 / 9));
+    }
+
 }
 
 UI.init();
