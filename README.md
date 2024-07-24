@@ -11,7 +11,7 @@ Welcome to the Weather Application! This app provides real-time weather informat
 
 ## How to Use
 
--Viewing Current Weather:
+- Viewing Current Weather:
  - The app displays the current weather conditions for your location upon opening.
  - Key details such as temperature, weather type, and city name are shown.
 
