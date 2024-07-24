@@ -11,7 +11,9 @@
                 <div id="inputContainer">
                     <div>
                         <input type="text" id="inputField" placeholder="Location ..." required>
-                        <button id="inputFieldSearchBtn"><img src="/asset/icons/searchIcon.svg" id="searchIconImg" alt="search button icon"></button>
+                        <button id="inputFieldSearchBtn">
+                            <img src="<%= require('/asset/icons/searchIcon.svg') %>" id="searchIconImg" alt="search button icon">
+                        </button>
                     </div>
                     <span id="inputErrorMsg">*Couldn't find the location, try again.</span>
                 </div>
@@ -26,34 +28,34 @@
                             <span id="mainInfoWeatherCityName">Oslo</span>
                             <span id="mainInfoWeatherDate">Monday, 20. July</span>
                             <span id="mainInfoWeatherDegrees">18 C°</span>
-                            <img id="mainInfoCloudIcon" src="/asset/icons/clear-day.svg" alt="Cloud icon">
+                            <img id="mainInfoCloudIcon" src="<%= require('/asset/icons/clear-day.svg') %>" alt="Cloud icon">
                         </div>
                     </div>
                     <div id="secondInformationContainer">
                         <div id="secondInfoDisplayContainer">
                             <div>
-                                <img src="/asset/icons/rainChance.svg" alt="icon" class="secondInfoIcons">
+                                <img src="<%= require('/asset/icons/rainChance.svg') %>" alt="icon" class="secondInfoIcons">
                                 <div class="secondInfo">
                                     <span>Chance of rain</span>
                                     <span id="chanceOfRain">100%</span>
                                 </div>
                             </div>
                             <div>
-                                <img src="/asset/icons/humidity.svg" alt="icon" class="secondInfoIcons">
+                                <img src="<%= require('/asset/icons/humidity.svg') %>" alt="icon" class="secondInfoIcons">
                                 <div class="secondInfo"> 
                                     <span>Humidity</span>
                                     <span id="Humidity">65%</span>
                                 </div>
                             </div>
                             <div>
-                                <img src="/asset/icons/tempFeel.svg" alt="icon" class="secondInfoIcons">
+                                <img src="<%= require('/asset/icons/tempFeel.svg') %>" alt="icon" class="secondInfoIcons">
                                 <div class="secondInfo">
                                     <span>Feels like</span>
                                     <span id="feelsLikeTemp">21°</span>
                                 </div>
                             </div>
                             <div>
-                                <img src="/asset/icons/windSpeed.svg" alt="icon" class="secondInfoIcons">
+                                <img src="<%= require('/asset/icons/windSpeed.svg') %>" alt="icon" class="secondInfoIcons">
                                 <div class="secondInfo">
                                     <span>windSpeed</span>
                                     <span id="windSpeed">7 km/h</span>
@@ -64,46 +66,66 @@
                 </div>
                 <div id="carouselles">
                     <div class="carouselleContainer">
-                        <button class="carouselle-btn prev" id="dayPrevBtn"><img src="/asset/icons/arrowLeft.svg" alt="previous" class="carouselleBtnIcons"></button>
+                        <button class="carouselle-btn prev" id="dayPrevBtn">
+                            <img src="<%= require('/asset/icons/arrowLeft.svg') %>" alt="previous" class="carouselleBtnIcons">
+                        </button>
                         <div class="slidesWrapper" id="slidesWrapperDays"> 
                             <div class="slide">
                                 <div>
                                     <span>Monday</span>
                                     <span>32 C°</span>
                                 </div>
-                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                                <img src="<%= require('/asset/icons/clear-day.svg') %>" alt="Cloud icon" class="carouselleIcons">
                             </div>
                             <div class="slide">
                                 <div>
                                     <span>Tuesday</span>
                                     <span>32 C°</span>
                                 </div>
-                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                                <img src="<%= require('/asset/icons/clear-day.svg') %>" alt="Cloud icon" class="carouselleIcons">
                             </div>
                             <div class="slide">
                                 <div>
                                     <span>Wednesday</span>
                                     <span>32 C°</span>
                                 </div>
-                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                                <img src="<%= require('/asset/icons/clear-day.svg') %>" alt="Cloud icon" class="carouselleIcons">
                             </div>
                         </div>
-                        <button class="carouselle-btn next" id="dayNextBtn"><img src="/asset/icons/arrowRight.svg" alt="next" class="carouselleBtnIcons"></button>
+                        <button class="carouselle-btn next" id="dayNextBtn">
+                            <img src="<%= require('/asset/icons/arrowRight.svg') %>" alt="next" class="carouselleBtnIcons">
+                        </button>
                     </div>
                     <div class="carouselleContainer">
-                        <button class="carouselle-btn prev" id="hourPrevBtn"><img src="/asset/icons/arrowLeft.svg" alt="previous" class="carouselleBtnIcons"></button>
+                        <button class="carouselle-btn prev" id="hourPrevBtn">
+                            <img src="<%= require('/asset/icons/arrowLeft.svg') %>" alt="previous" class="carouselleBtnIcons">
+                        </button>
                         <div class="slidesWrapper" id="slidesWrapperHour">
                             <div class="slide">
                                 <div>
                                     <span>00:00</span>
                                     <span>18 C°</span>
                                 </div>
-                                <img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons">
+                                <img src="<%= require('/asset/icons/clear-day.svg') %>" alt="Cloud icon" class="carouselleIcons">
                             </div>
-                            <div class="slide"><div><span>01:00</span><span>21 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
-                            <div class="slide"><div><span>02:00</span><span>11 C°</span></div><img src="/asset/icons/clear-day.svg" alt="Cloud icon" class="carouselleIcons"></div>
+                            <div class="slide">
+                                <div>
+                                    <span>01:00</span>
+                                    <span>21 C°</span>
+                                </div>
+                                <img src="<%= require('/asset/icons/clear-day.svg') %>" alt="Cloud icon" class="carouselleIcons">
+                            </div>
+                            <div class="slide">
+                                <div>
+                                    <span>02:00</span>
+                                    <span>11 C°</span>
+                                </div>
+                                <img src="<%= require('/asset/icons/clear-day.svg') %>" alt="Cloud icon" class="carouselleIcons">
+                            </div>
                         </div>
-                        <button class="carouselle-btn next" id="hourNextBtn"><img src="/asset/icons/arrowRight.svg" alt="next" class="carouselleBtnIcons"></button>
+                        <button class="carouselle-btn next" id="hourNextBtn">
+                            <img src="<%= require('/asset/icons/arrowRight.svg') %>" alt="next" class="carouselleBtnIcons">
+                        </button>
                     </div>
                 </div>
             </div>
