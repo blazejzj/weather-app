@@ -55,7 +55,8 @@ body {
     max-width: 1500px;
     width: 100%;
     min-width: 100%;
-
+    height: 100%; 
+    overflow: auto; 
 }
 
 #infoContainer {
@@ -295,4 +296,61 @@ body {
 
 #dayCarouselleContainer {
     width: 100%;
+}
+
+@media only screen and (max-width: 1500px) {
+    #mainWrapper {
+        display: flex;
+        gap: 2rem;
+        height: 100%;
+        min-height: 100%;
+        overflow: auto;
+    }
+
+    #inputContainer {
+        margin-top: 50rem;
+    }
+
+    #infoContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-wrap: nowrap;
+        width: 100%;
+
+        > div {
+            height: auto;
+        }
+    }
+
+    #mainInformationContainer {
+        width: 100%;
+        #mainInfoDisplayContainer {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            #mainInfoWeatherType {
+                font-size: 2rem;
+            }
+        }
+    }
+
+    #carouselles {
+        flex-direction: column;
+
+        .carouselleContainer {
+            .slidesWrapper {
+                display: flex;
+                flex-direction: column;
+                overflow: auto; 
+            }
+        }
+
+        > div {
+            flex-direction: column;
+        }
+    }
 }

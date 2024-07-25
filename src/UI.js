@@ -137,7 +137,8 @@ class UI {
         }
         weatherCityName.textContent = data.address;
         icon.src = icons[information.icon];
-        chanceOfRain.textContent = information.precip + " %";
+        // Round up to nearest 1 decimal
+        chanceOfRain.textContent = Math.round(information.precip * 10) / 10 + "%";
         humidity.textContent = information.humidity + "%";
         windSpeed.textContent = information.windspeed + " m/s";
 
